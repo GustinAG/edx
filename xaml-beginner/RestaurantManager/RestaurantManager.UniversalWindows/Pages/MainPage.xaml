@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="RestaurantManager.UniversalWindows.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestaurantManager.UniversalWindows.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="PageLoaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="headerText" Grid.ColumnSpan="2" Style="{ThemeResource HeaderTextBlockStyle}" TextAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{ThemeResource SubheaderTextBlockStyle}" TextAlignment="Center" VerticalAlignment="Center">
+                <Run>Version </Run>
+                <Run x:Name="versionText" />
+        </TextBlock>
+        <Button Grid.Row="2">
+            <TextBlock TextTrimming="CharacterEllipsis">Go to Orders View</TextBlock>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="Submit Order" />
+    </Grid>
+</Page>
