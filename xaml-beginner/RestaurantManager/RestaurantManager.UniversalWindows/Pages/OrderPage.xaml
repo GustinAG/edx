@@ -31,7 +31,7 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Special Requests:" />
