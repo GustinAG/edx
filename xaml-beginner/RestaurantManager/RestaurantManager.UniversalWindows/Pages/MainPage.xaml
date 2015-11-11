@@ -17,14 +17,14 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock x:Name="headerText" Grid.ColumnSpan="2" Style="{ThemeResource HeaderTextBlockStyle}" TextAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{ThemeResource SubheaderTextBlockStyle}" TextAlignment="Center" VerticalAlignment="Center">
+        <Image Grid.ColumnSpan="2" Source="../Assets/SplashScreen.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" TextAlignment="Center" VerticalAlignment="Center">
                 <Run>Version </Run>
                 <Run x:Name="versionText" />
         </TextBlock>
-        <Button Grid.Row="2">
+        <Button Grid.Row="2" x:Name="expediteButton" Click="ExpediteButtonClick">
             <TextBlock TextTrimming="CharacterEllipsis">Go to Orders View</TextBlock>
         </Button>
-        <Button Grid.Row="2" Grid.Column="1" Content="Submit Order" />
+        <Button Grid.Row="2" x:Name="orderButton" Grid.Column="1" Content="Submit Order" Click="OrderButtonClick" />
     </Grid>
 </Page>
