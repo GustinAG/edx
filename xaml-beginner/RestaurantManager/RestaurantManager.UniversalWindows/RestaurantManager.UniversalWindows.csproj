@@ -96,6 +96,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BackEnd\MealsRepository.cs" />
+    <Compile Include="BackEnd\OrdersRepository.cs" />
     <Compile Include="Pages\ExpeditePage.xaml.cs">
       <DependentUpon>ExpeditePage.xaml</DependentUpon>
     </Compile>
@@ -106,7 +108,7 @@
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\Versioning.cs" />
+    <Compile Include="BackEnd\Versioning.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

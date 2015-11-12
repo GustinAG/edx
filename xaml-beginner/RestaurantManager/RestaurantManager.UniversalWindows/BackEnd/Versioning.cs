@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace RestaurantManager.UniversalWindows.Pages
+namespace RestaurantManager.UniversalWindows.BackEnd
 {
     internal static class Versioning
     {

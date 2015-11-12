@@ -30,13 +30,33 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="50" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+
+        <ListView Grid.Row="1" Grid.RowSpan="2" x:Name="mealsBox" ItemsSource="{x:Bind _meals}" HorizontalAlignment="Stretch">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="FontSize" Value="24" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Button Grid.Row="4" x:Name="addButton" Content="Add to Order" Click="AddButtonClick" />
+
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Special Requests:" />
+
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Order Items:" />
-        <Button Grid.Row="4" Content="Add to Order" />
-        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Submit Order" />
+        <ListView Grid.Row="2" Grid.Column="2" x:Name="orderedMealsBox" ItemsSource="{x:Bind _orderedMeals}" HorizontalAlignment="Stretch">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="FontSize" Value="24" />
+                    <!-- Reason for this: http://stackoverflow.com/questions/3137100/wpf-listview-with-readonly-selecteditems -->
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="submitButton" Content="Submit Order" Click="SubmitButtonClick" />
     </Grid>
 </Page>
