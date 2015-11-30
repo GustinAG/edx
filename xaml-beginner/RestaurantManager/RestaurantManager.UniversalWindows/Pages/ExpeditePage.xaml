@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:backend="using:RestaurantManager.UniversalWindows.BackEnd"
+    xmlns:models="using:RestaurantManager.Models"
     mc:Ignorable="d">
 
     <Page.TopAppBar>
@@ -15,13 +15,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.DataContext>
-            <backend:OrdersRepository />
+            <models:RestaurantModel />
         </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <GridView x:Name="OrdersView" ItemsSource="{Binding All}" Margin="10">
+        <GridView x:Name="OrdersView" ItemsSource="{Binding Orders}" Margin="10">
             <GridView.ItemContainerStyle>
                 <Style TargetType="GridViewItem">
                     <Setter Property="Background" Value="DarkGray" />

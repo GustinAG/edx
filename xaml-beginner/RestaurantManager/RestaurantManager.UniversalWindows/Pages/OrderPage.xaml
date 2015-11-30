@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:backend="using:RestaurantManager.UniversalWindows.BackEnd"
+    xmlns:models="using:RestaurantManager.Models"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -21,9 +21,9 @@
         </CommandBar>
     </Page.TopAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="MainGrid">
         <Grid.DataContext>
-            <backend:MealsRepository />
+            <models:RestaurantModel />
         </Grid.DataContext>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -38,7 +38,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="1" Grid.RowSpan="2" x:Name="MealsBox" ItemsSource="{Binding All}" HorizontalAlignment="Stretch">
+        <ListView Grid.Row="1" Grid.RowSpan="2" x:Name="MealsBox" ItemsSource="{Binding Meals}" HorizontalAlignment="Stretch">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="FontSize" Value="24" />
@@ -50,7 +50,7 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Special Requests:" />
 
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Order Items:" />
-        <ListView Grid.Row="2" Grid.Column="2" ItemsSource="{x:Bind _orderedMeals}" HorizontalAlignment="Stretch">
+        <ListView Grid.Row="2" Grid.Column="2" ItemsSource="{Binding CurrentOrderMeals}" HorizontalAlignment="Stretch">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="FontSize" Value="24" />

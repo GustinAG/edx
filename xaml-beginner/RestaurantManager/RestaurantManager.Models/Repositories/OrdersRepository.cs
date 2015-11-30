@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestaurantManager.UniversalWindows.BackEnd
+namespace RestaurantManager.Models.Repositories
 {
     /// <summary>
     /// This is just a fake repository here.
@@ -21,7 +21,7 @@ namespace RestaurantManager.UniversalWindows.BackEnd
             Init();
         }
 
-        public IReadOnlyList<string> All { get; private set; }
+        internal IReadOnlyList<string> All { get; private set; }
 
         private void Init()
         {
