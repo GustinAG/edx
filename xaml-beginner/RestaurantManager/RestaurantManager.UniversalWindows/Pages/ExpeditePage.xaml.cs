@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Xaml;
+using RestaurantManager.Models;
 
 namespace RestaurantManager.UniversalWindows.Pages
 {
@@ -16,7 +17,7 @@ namespace RestaurantManager.UniversalWindows.Pages
 
         private void ClearButtonClick(object sender, RoutedEventArgs e)
         {
-            OrdersView.ItemsSource = null;
+            ((RestaurantModel)MainGrid.DataContext).Orders.Clear();
         }
     }
 }

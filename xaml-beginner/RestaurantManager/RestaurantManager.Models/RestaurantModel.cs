@@ -9,12 +9,12 @@ namespace RestaurantManager.Models
         public RestaurantModel()
         {
             Meals = new MealsRepository().All;
-            Orders = new OrdersRepository().All;
+            Orders = new ObservableCollection<string>(new OrdersRepository().All);
             CurrentOrderMeals = new ObservableCollection<string>();
         }
 
         public IReadOnlyList<string> Meals { get; private set; }
-        public IReadOnlyList<string> Orders { get; private set; }
+        public ObservableCollection<string> Orders { get; private set; }
         public ObservableCollection<string> CurrentOrderMeals { get; private set; }
     }
 }

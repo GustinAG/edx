@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System.Collections.ObjectModel;
+using Windows.UI.Xaml;
 using RestaurantManager.Models;
 
 namespace RestaurantManager.UniversalWindows.Pages
@@ -19,14 +20,17 @@ namespace RestaurantManager.UniversalWindows.Pages
         {
             if (MealsBox.SelectedItem == null) return;
 
-            ((RestaurantModel)MainGrid.DataContext).CurrentOrderMeals.Add(MealsBox.SelectedItem.ToString());
+            CurrentOrderMeals.Add(MealsBox.SelectedItem.ToString());
             MealsBox.SelectedItem = null;
         }
 
         private void SubmitButtonClick(object sender, RoutedEventArgs e)
         {
             MealsBox.SelectedItem = null;
-            ((RestaurantModel)MainGrid.DataContext).CurrentOrderMeals.Clear();
+            ((RestaurantModel)MainGrid.DataContext).Orders.Add(string.Join("\n", CurrentOrderMeals));
+            CurrentOrderMeals.Clear();
         }
+
+        private ObservableCollection<string> CurrentOrderMeals => ((RestaurantModel)MainGrid.DataContext).CurrentOrderMeals;
     }
 }

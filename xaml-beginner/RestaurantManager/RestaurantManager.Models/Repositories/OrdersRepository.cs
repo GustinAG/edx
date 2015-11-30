@@ -10,8 +10,8 @@ namespace RestaurantManager.Models.Repositories
     /// </summary>
     internal class OrdersRepository
     {
-        private const int MaxOrderCount = 20;
-        private const int MaxMealPerOrderCount = 8;
+        private const int MaxOrderCount = 5;
+        private const int MaxMealPerOrderCount = 2;
 
         private readonly IReadOnlyList<string> _meals = new MealsRepository().All;
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
@@ -21,7 +21,7 @@ namespace RestaurantManager.Models.Repositories
             Init();
         }
 
-        internal IReadOnlyList<string> All { get; private set; }
+        internal IList<string> All { get; private set; }
 
         private void Init()
         {

@@ -2,7 +2,7 @@
     x:Class="RestaurantManager.UniversalWindows.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:RestaurantManager.UniversalWindows"
+    xmlns:models="using:RestaurantManager.Models"
     RequestedTheme="Dark">
 
     <Application.Resources>
@@ -11,5 +11,7 @@
             <Setter Property="Margin" Value="15" />
             <Setter Property="HorizontalAlignment" Value="Center" />
         </Style>
+        <!--For text blocks, I don't like all of them being 32 large.-->
+        <models:RestaurantModel x:Key="RestaurantModel" />
     </Application.Resources>
 </Application>
