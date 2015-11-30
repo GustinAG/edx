@@ -7,11 +7,8 @@ namespace RestaurantManager.UniversalWindows.BackEnd
     /// This is just a fake repository here.
     /// A real repository would be implemented significantly differently, of course.
     /// </summary>
-    internal static class MealsRepository
+    internal class MealsRepository
     {
-        internal static IReadOnlyList<string> All
-        {
-            get { return new[] { "Pizza", "Hamburger", "Hot-Dog", "Beer", "Wine", "Coke" }.ToList(); }
-        }
+        public IReadOnlyList<string> All { get; } = new[] { "Pizza", "Hamburger", "Hot-Dog", "Beer", "Wine", "Coke" }.ToList();
     }
 }

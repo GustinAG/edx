@@ -1,18 +1,12 @@
-﻿using RestaurantManager.UniversalWindows.BackEnd;
-using System.Collections.Generic;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml;
 
 namespace RestaurantManager.UniversalWindows.Pages
 {
-    public sealed partial class ExpeditePage : Page
+    public sealed partial class ExpeditePage
     {
-        private readonly IReadOnlyList<string> _orders;
-
         public ExpeditePage()
         {
             InitializeComponent();
-            _orders = new OrdersRepository().All;
         }
 
         private void HomeButtonClick(object sender, RoutedEventArgs e)
@@ -22,7 +16,7 @@ namespace RestaurantManager.UniversalWindows.Pages
 
         private void ClearButtonClick(object sender, RoutedEventArgs e)
         {
-            ordersView.ItemsSource = null;
+            OrdersView.ItemsSource = null;
         }
     }
 }

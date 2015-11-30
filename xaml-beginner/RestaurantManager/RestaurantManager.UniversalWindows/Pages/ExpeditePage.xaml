@@ -2,23 +2,26 @@
     x:Class="RestaurantManager.UniversalWindows.Pages.ExpeditePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:RestaurantManager.UniversalWindows.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:backend="using:RestaurantManager.UniversalWindows.BackEnd"
     mc:Ignorable="d">
 
     <Page.TopAppBar>
         <CommandBar>
-            <AppBarButton x:Name="homeButton" Icon="Home" Label="Back to Main" Click="HomeButtonClick" />
+            <AppBarButton x:Name="HomeButton" Icon="Home" Label="Back to Main" Click="HomeButtonClick" />
         </CommandBar>
     </Page.TopAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.DataContext>
+            <backend:OrdersRepository />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <GridView x:Name="ordersView" ItemsSource="{x:Bind _orders}" Margin="10">
+        <GridView x:Name="OrdersView" ItemsSource="{Binding All}" Margin="10">
             <GridView.ItemContainerStyle>
                 <Style TargetType="GridViewItem">
                     <Setter Property="Background" Value="DarkGray" />
@@ -29,6 +32,6 @@
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
-        <Button Grid.Row="1" x:Name="clearButton" Content="Clear All Orders" Click="ClearButtonClick" />
+        <Button Grid.Row="1" x:Name="ClearButton" Content="Clear All Orders" Click="ClearButtonClick" />
     </Grid>
 </Page>

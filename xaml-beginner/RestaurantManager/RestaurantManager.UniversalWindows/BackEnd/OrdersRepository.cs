@@ -13,8 +13,8 @@ namespace RestaurantManager.UniversalWindows.BackEnd
         private const int MaxOrderCount = 20;
         private const int MaxMealPerOrderCount = 8;
 
-        private readonly IReadOnlyList<string> _meals = MealsRepository.All;
-        private Random _random = new Random(DateTime.Now.Millisecond);
+        private readonly IReadOnlyList<string> _meals = new MealsRepository().All;
+        private readonly Random _random = new Random(DateTime.Now.Millisecond);
 
         internal OrdersRepository()
         {

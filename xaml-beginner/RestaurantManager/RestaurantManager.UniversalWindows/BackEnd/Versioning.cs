@@ -2,8 +2,8 @@
 
 namespace RestaurantManager.UniversalWindows.BackEnd
 {
-    internal static class Versioning
+    internal class Versioning
     {
-        internal static readonly string Version = typeof(Versioning).GetTypeInfo().Assembly.GetName().Version.ToString();
+        public static string Version { get; } = typeof(Versioning).GetTypeInfo().Assembly.GetName().Version.ToString();
     }
 }
